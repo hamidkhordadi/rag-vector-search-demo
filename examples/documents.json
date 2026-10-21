@@ -1,0 +1,40 @@
+{
+  "documents": [
+    {
+      "document_id": "shipping-policy",
+      "title": "Shipping Policy",
+      "source": "synthetic://docs/shipping",
+      "text": "Standard orders are prepared within one business day. Express delivery is available in selected cities. Customers receive a tracking code after shipment. Delivery delays may occur during public holidays.",
+      "metadata": {
+        "category": "support"
+      }
+    },
+    {
+      "document_id": "returns-policy",
+      "title": "Returns Policy",
+      "source": "synthetic://docs/returns",
+      "text": "Unused products may be returned within fourteen days of delivery. The item must remain in its original condition. Refund processing begins after the returned package is inspected.",
+      "metadata": {
+        "category": "support"
+      }
+    },
+    {
+      "document_id": "inventory-guide",
+      "title": "Inventory Guide",
+      "source": "synthetic://docs/inventory",
+      "text": "Inventory availability is updated after confirmed purchases. Products with zero available stock are not offered for new orders. Stock reservations can temporarily reduce available quantity.",
+      "metadata": {
+        "category": "operations"
+      }
+    },
+    {
+      "document_id": "payment-guide",
+      "title": "Payment Guide",
+      "source": "synthetic://docs/payment",
+      "text": "A successful payment receives a unique transaction reference. Failed payments do not complete the order. Payment status should be verified before fulfillment begins.",
+      "metadata": {
+        "category": "payments"
+      }
+    }
+  ]
+}

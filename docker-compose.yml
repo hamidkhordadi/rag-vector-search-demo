@@ -1,0 +1,31 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.15.4
+    volumes:
+      - qdrant-data:/qdrant/storage
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash -c 'echo > /dev/tcp/127.0.0.1/6333'"
+        ]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+
+  api:
+    build: .
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: demo_documents
+      EMBEDDING_DIMENSIONS: 256
+      CHUNK_SIZE: 420
+      CHUNK_OVERLAP: 80
+    ports:
+      - "127.0.0.1:8083:8080"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+
+volumes:
+  qdrant-data:
